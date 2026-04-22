@@ -1,0 +1,1994 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <!-- ============================================================
+       SKY CAKE — index.html
+       Luxury cake website for Səma / Sky Cake
+       Languages: AZ / RU / EN
+       ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Sky Cake — Handcrafted by Səma</title>
+    <meta
+      name="description"
+      content="Sky Cake — Səma tərəfindən əl ilə hazırlanan tort və şirniyyatlar. Toy, nişan, ad günü tortları."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="sama-main.png" />
+  </head>
+  <body>
+    <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- ============================================================
+       MAGIC INTRO — shown only on first visit
+       ============================================================ -->
+    <div id="magic-intro">
+      <div class="magic-sparkles" id="magic-sparkles"></div>
+      <div class="magic-wand">🪄</div>
+      <div class="magic-logo-wrap">
+        <img src="sama-main.png" alt="Sky Cake Logo" style="height: 110px" />
+      </div>
+      <p
+        class="magic-text"
+        data-az="Xoş gəlmisiniz"
+        data-ru="Добро пожаловать"
+        data-en="Welcome"
+      >
+        Xoş gəlmisiniz
+      </p>
+    </div>
+
+    <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+    <nav id="navbar">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <img src="sama-main.png" alt="Sky Cake" />
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links">
+        <li>
+          <a
+            href="#about"
+            class="nav-link"
+            data-az="Haqqımda"
+            data-ru="Обо мне"
+            data-en="About"
+            >Haqqımda</a
+          >
+        </li>
+        <li>
+          <a
+            href="#categories"
+            class="nav-link"
+            data-az="Məhsullar"
+            data-ru="Продукты"
+            data-en="Menu"
+            >Məhsullar</a
+          >
+        </li>
+        <li>
+          <a
+            href="#gallery"
+            class="nav-link"
+            data-az="Qalereya"
+            data-ru="Галерея"
+            data-en="Gallery"
+            >Qalereya</a
+          >
+        </li>
+        <li>
+          <a
+            href="#order"
+            class="nav-link"
+            data-az="Sifariş"
+            data-ru="Заказ"
+            data-en="Order"
+            >Sifariş</a
+          >
+        </li>
+        <li>
+          <a
+            href="#delivery"
+            class="nav-link"
+            data-az="Çatdırılma"
+            data-ru="Доставка"
+            data-en="Delivery"
+            >Çatdırılma</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="nav-link"
+            data-az="Əlaqə"
+            data-ru="Контакты"
+            data-en="Contact"
+            >Əlaqə</a
+          >
+        </li>
+      </ul>
+
+      <!-- Language switcher + hamburger -->
+      <div style="display: flex; align-items: center; gap: 20px">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="az">AZ</button>
+          <span class="lang-sep">·</span>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <span class="lang-sep">·</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile navigation overlay -->
+    <div class="mobile-nav" id="mobile-nav">
+      <ul
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 28px;
+          list-style: none;
+        "
+      >
+        <li>
+          <a
+            href="#about"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Haqqımda"
+            data-ru="Обо мне"
+            data-en="About"
+            >Haqqımda</a
+          >
+        </li>
+        <li>
+          <a
+            href="#categories"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Məhsullar"
+            data-ru="Продукты"
+            data-en="Menu"
+            >Məhsullar</a
+          >
+        </li>
+        <li>
+          <a
+            href="#gallery"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Qalereya"
+            data-ru="Галерея"
+            data-en="Gallery"
+            >Qalereya</a
+          >
+        </li>
+        <li>
+          <a
+            href="#order"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Sifariş"
+            data-ru="Заказ"
+            data-en="Order"
+            >Sifariş</a
+          >
+        </li>
+        <li>
+          <a
+            href="#delivery"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Çatdırılma"
+            data-ru="Доставка"
+            data-en="Delivery"
+            >Çatdırılma</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="nav-link"
+            onclick="closeMobileNav()"
+            data-az="Əlaqə"
+            data-ru="Контакты"
+            data-en="Contact"
+            >Əlaqə</a
+          >
+        </li>
+      </ul>
+      <div class="mobile-lang">
+        <button class="lang-btn active" data-lang="az">AZ</button>
+        <span class="lang-sep">·</span>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <span class="lang-sep">·</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       SECTION 1 — HERO
+       ============================================================ -->
+    <section id="hero">
+      <!-- Parallax background image -->
+      <div class="hero-bg" id="hero-bg"></div>
+      <!-- Gradient overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Main content -->
+      <div class="hero-content">
+        <div class="hero-brand">
+          <!-- "Sky" — Cormorant Garamond italic -->
+          <span class="hero-sky">Sky</span>
+
+          <!-- Gold ornament divider -->
+          <div class="hero-divider-line">
+            <span></span>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="#D4AF8C">
+              <polygon points="5,0 10,5 5,10 0,5" />
+            </svg>
+            <span></span>
+          </div>
+
+          <!-- "Cake" — Great Vibes script -->
+          <span class="hero-cake">Cake</span>
+        </div>
+
+        <p
+          class="hero-tagline"
+          data-az="Əl işi · Sevgi ilə · Hər münasibət üçün"
+          data-ru="Ручная работа · С любовью · Для любого события"
+          data-en="Handcrafted · With Love · For Every Occasion"
+        >
+          Əl işi · Sevgi ilə · Hər münasibət üçün
+        </p>
+
+        <div
+          class="hero-cta"
+          style="
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+          "
+        >
+          <a
+            href="#gallery"
+            class="btn-outline"
+            data-az="Qalereya"
+            data-ru="Галерея"
+            data-en="Gallery"
+          >
+            <span>Qalereya</span>
+          </a>
+          <a
+            href="#order"
+            class="btn-primary"
+            data-az="Sifariş Et"
+            data-ru="Заказать"
+            data-en="Order Now"
+          >
+            <span>Sifariş Et</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">scroll</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 2 — ABOUT
+       ============================================================ -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Images -->
+          <div class="about-images reveal-left">
+            <img src="sama-poster.png" alt="Səma" class="about-img-main" />
+            <img src="cake-7.png" alt="Sky Cake" class="about-img-secondary" />
+          </div>
+
+          <!-- Content -->
+          <div class="about-content reveal-right">
+            <span
+              class="section-label"
+              data-az="Haqqımda"
+              data-ru="Обо мне"
+              data-en="About Me"
+              >Haqqımda</span
+            >
+
+            <h2
+              class="section-title"
+              data-az="Hər tort bir hekayədir"
+              data-ru="Каждый торт — это история"
+              data-en="Every cake tells a story"
+            >
+              Hər tort bir hekayədir
+            </h2>
+
+            <div class="divider"><span class="divider-icon">✦</span></div>
+
+            <p
+              class="about-text"
+              data-az="Salam, mən Səmayam. Tortlarımı böyük həvəs və sevgi ilə hazırlayıram. Hər sifarişi fərdi yanaşma ilə icra edirəm — çünki hər insan xüsusidir, hər günü istisnasız şəkildə unudulmaz olmalıdır."
+              data-ru="Привет, я Сэма. Я готовлю торты с большой страстью и любовью. Каждый заказ выполняю индивидуально — потому что каждый человек особенный, и каждый день должен быть незабываемым."
+              data-en="Hello, I'm Səma. I craft every cake with deep passion and love. Each order is approached individually — because every person is special, and every occasion deserves to be truly unforgettable."
+            >
+              Salam, mən Səmayam. Tortlarımı böyük həvəs və sevgi ilə
+              hazırlayıram. Hər sifarişi fərdi yanaşma ilə icra edirəm — çünki
+              hər insan xüsusidir, hər günü istisnasız şəkildə unudulmaz
+              olmalıdır.
+            </p>
+
+            <blockquote
+              class="about-quote"
+              data-az='"Yaxşı bir tortun içində yalnız dadlı maddələr deyil, qayğı da olmalıdır."'
+              data-ru='"В хорошем торте должна быть не только вкусная начинка, но и забота."'
+              data-en='"A great cake is not just made with fine ingredients — it is made with care."'
+            >
+              "Yaxşı bir tortun içində yalnız dadlı maddələr deyil, qayğı da
+              olmalıdır."
+            </blockquote>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-num">500+</span>
+                <span
+                  class="stat-label"
+                  data-az="Xoşbəxt müştəri"
+                  data-ru="Счастливых клиентов"
+                  data-en="Happy clients"
+                  >Xoşbəxt müştəri</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100+</span>
+                <span
+                  class="stat-label"
+                  data-az="Toy tortu"
+                  data-ru="Свадебных тортов"
+                  data-en="Wedding cakes"
+                  >Toy tortu</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">50+</span>
+                <span
+                  class="stat-label"
+                  data-az="Dizayn növü"
+                  data-ru="Дизайнов"
+                  data-en="Cake designs"
+                  >Dizayn növü</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 3 — CATEGORIES (HeJi menu style)
+       ============================================================ -->
+    <section id="categories">
+      <div class="container">
+        <div class="categories-header reveal">
+          <span
+            class="section-label"
+            data-az="Məhsullar"
+            data-ru="Продукты"
+            data-en="Our Menu"
+            >Məhsullar</span
+          >
+          <h2
+            class="section-title"
+            data-az="Nə hazırlayırıq?"
+            data-ru="Что мы готовим?"
+            data-en="What we create"
+          >
+            Nə hazırlayırıq?
+          </h2>
+        </div>
+
+        <div class="categories-layout reveal">
+          <!-- Left: category menu -->
+          <ul class="cat-menu">
+            <li class="cat-menu-item active" data-target="cat-tort">
+              <span class="cat-menu-icon">🎂</span>
+              <span data-az="Tortlar" data-ru="Торты" data-en="Cakes"
+                >Tortlar</span
+              >
+            </li>
+            <li class="cat-menu-item" data-target="cat-keks">
+              <span class="cat-menu-icon">🧁</span>
+              <span data-az="Keks & Cupcake" data-ru="Кексы" data-en="Cupcakes"
+                >Keks & Cupcake</span
+              >
+            </li>
+            <li class="cat-menu-item" data-target="cat-sirniyyat">
+              <span class="cat-menu-icon">🍪</span>
+              <span data-az="Şirniyyatlar" data-ru="Сладости" data-en="Sweets"
+                >Şirniyyatlar</span
+              >
+            </li>
+            <li class="cat-menu-item" data-target="cat-desert">
+              <span class="cat-menu-icon">🍮</span>
+              <span data-az="Desertlər" data-ru="Десерты" data-en="Desserts"
+                >Desertlər</span
+              >
+            </li>
+            <li class="cat-menu-item" data-target="cat-pahlava">
+              <span class="cat-menu-icon">🥐</span>
+              <span data-az="Xəmirləşmələr" data-ru="Выпечка" data-en="Pastry"
+                >Xəmirləşmələr</span
+              >
+            </li>
+          </ul>
+
+          <!-- Right: category content panels -->
+          <div class="cat-content">
+            <!-- Panel: Tortlar -->
+            <div class="cat-panel active" id="cat-tort">
+              <h3
+                class="cat-panel-title"
+                data-az="Tortlar"
+                data-ru="Торты"
+                data-en="Cakes"
+              >
+                Tortlar
+              </h3>
+              <p
+                class="cat-panel-desc"
+                data-az="Hər münasibət üçün fərdi dizaynlı tortlar — toy, nişan, ad günü və daha çox."
+                data-ru="Торты с индивидуальным дизайном для любого события — свадьба, помолвка, день рождения и многое другое."
+                data-en="Custom designed cakes for every occasion — weddings, engagements, birthdays and more."
+              >
+                Hər münasibət üçün fərdi dizaynlı tortlar — toy, nişan, ad günü
+                və daha çox.
+              </p>
+              <div class="cat-items-grid">
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Toy tortu"
+                      data-ru="Свадебный торт"
+                      data-en="Wedding Cake"
+                    >
+                      Toy tortu
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Çox mərtəbəli, fondant və ya krem ilə"
+                      data-ru="Многоярусный, с фондантом или кремом"
+                      data-en="Multi-tier, fondant or buttercream"
+                    >
+                      Çox mərtəbəli, fondant və ya krem ilə
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Nişan tortu"
+                      data-ru="Торт на помолвку"
+                      data-en="Engagement Cake"
+                    >
+                      Nişan tortu
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Romantik dizayn, güllər, inci dekorları"
+                      data-ru="Романтичный дизайн, розы, жемчужный декор"
+                      data-en="Romantic design, roses, pearl decorations"
+                    >
+                      Romantik dizayn, güllər, inci dekorları
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Ad günü tortu"
+                      data-ru="Торт на день рождения"
+                      data-en="Birthday Cake"
+                    >
+                      Ad günü tortu
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Uşaq, yeniyetmə, böyüklər üçün"
+                      data-ru="Для детей, подростков и взрослых"
+                      data-en="For children, teens and adults"
+                    >
+                      Uşaq, yeniyetmə, böyüklər üçün
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Xəyal tortu"
+                      data-ru="Тематический торт"
+                      data-en="Theme Cake"
+                    >
+                      Xüsusi dizayn tortu
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Personaj, moda, peşə mövzularında"
+                      data-ru="На тему персонажей, моды, профессий"
+                      data-en="Character, fashion, profession themes"
+                    >
+                      Personaj, moda, peşə mövzularında
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Naked / Semi-naked"
+                      data-ru="Naked / Semi-naked"
+                      data-en="Naked / Semi-naked"
+                    >
+                      Naked / Semi-naked
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Minimalist, təbii görünüş, taze çiçəklər"
+                      data-ru="Минималистичный, натуральный вид, свежие цветы"
+                      data-en="Minimalist, natural look, fresh flowers"
+                    >
+                      Minimalist, təbii görünüş, taze çiçəklər
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Keks & Cupcake -->
+            <div class="cat-panel" id="cat-keks">
+              <h3
+                class="cat-panel-title"
+                data-az="Keks & Cupcake"
+                data-ru="Кексы и Капкейки"
+                data-en="Cupcakes & Muffins"
+              >
+                Keks & Cupcake
+              </h3>
+              <p
+                class="cat-panel-desc"
+                data-az="Mini ölçüdə böyük dad — partiyalar, büfetlər, hədiyyə qutuları üçün."
+                data-ru="Маленький размер — большой вкус. Для вечеринок, фуршетов, подарочных коробок."
+                data-en="Small size, big flavor — for parties, dessert bars and gift boxes."
+              >
+                Mini ölçüdə böyük dad — partiyalar, büfetlər, hədiyyə qutuları
+                üçün.
+              </p>
+              <div class="cat-items-grid">
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Klassik cupcake"
+                      data-ru="Классический капкейк"
+                      data-en="Classic Cupcake"
+                    >
+                      Klassik cupcake
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Krem rozeti, rəngli bəzəklər"
+                      data-ru="Кремовая розетка, цветные украшения"
+                      data-en="Cream rosette, colorful decorations"
+                    >
+                      Krem rozeti, rəngli bəzəklər
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Muffin"
+                      data-ru="Маффин"
+                      data-en="Muffin"
+                    >
+                      Muffin
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Çikolada, limon, giləmeyvə ilə"
+                      data-ru="С шоколадом, лимоном, ягодами"
+                      data-en="Chocolate, lemon, berry flavors"
+                    >
+                      Çikolada, limon, giləmeyvə ilə
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Mini keks"
+                      data-ru="Мини-кекс"
+                      data-en="Mini Cake"
+                    >
+                      Mini keks
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Hədiyyə qutusu üçün ideal"
+                      data-ru="Идеально для подарочной коробки"
+                      data-en="Ideal for gift boxes"
+                    >
+                      Hədiyyə qutusu üçün ideal
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Cake Pop"
+                      data-ru="Кейк-попс"
+                      data-en="Cake Pop"
+                    >
+                      Cake Pop
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Çubuq üzərində kiçik tort topları"
+                      data-ru="Маленькие шарики торта на палочке"
+                      data-en="Cake balls on a stick"
+                    >
+                      Çubuq üzərində kiçik tort topları
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Şirniyyatlar -->
+            <div class="cat-panel" id="cat-sirniyyat">
+              <h3
+                class="cat-panel-title"
+                data-az="Şirniyyatlar"
+                data-ru="Сладости"
+                data-en="Sweets"
+              >
+                Şirniyyatlar
+              </h3>
+              <p
+                class="cat-panel-desc"
+                data-az="Nişan süfrəsi, şirniyyat büfeti — zərif qablaşdırmada ənənəvi ləzzətlər."
+                data-ru="Помолвочный стол, десертный стол — традиционные вкусы в элегантной упаковке."
+                data-en="Engagement table, dessert bar — traditional treats in elegant packaging."
+              >
+                Nişan süfrəsi, şirniyyat büfeti — zərif qablaşdırmada ənənəvi
+                ləzzətlər.
+              </p>
+              <div class="cat-items-grid">
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Şəkər çörəyi"
+                      data-ru="Сахарное печенье"
+                      data-en="Sugar Cookies"
+                    >
+                      Şəkər çörəyi
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Fərdi forma və rəng seçimi"
+                      data-ru="Индивидуальная форма и цвет"
+                      data-en="Custom shapes and colors"
+                    >
+                      Fərdi forma və rəng seçimi
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Macarons"
+                      data-ru="Макаруны"
+                      data-en="Macarons"
+                    >
+                      Macarons
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Fransız üslubu, müxtəlif ləzzətlər"
+                      data-ru="Французский стиль, разные вкусы"
+                      data-en="French style, various flavors"
+                    >
+                      Fransız üslubu, müxtəlif ləzzətlər
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Trüfel şokolad"
+                      data-ru="Шоколадные трюфели"
+                      data-en="Chocolate Truffles"
+                    >
+                      Trüfel şokolad
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Əl ilə hazırlanmış premium şokolad"
+                      data-ru="Ручной работы, премиум шоколад"
+                      data-en="Handmade premium chocolate"
+                    >
+                      Əl ilə hazırlanmış premium şokolad
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Zefir (Marshmallow)"
+                      data-ru="Зефир"
+                      data-en="Marshmallow"
+                    >
+                      Zefir
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Yumşaq, əl hazırı, rəngli"
+                      data-ru="Мягкий, ручной работы, цветной"
+                      data-en="Soft, handmade, colorful"
+                    >
+                      Yumşaq, əl hazırı, rəngli
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Desertlər -->
+            <div class="cat-panel" id="cat-desert">
+              <h3
+                class="cat-panel-title"
+                data-az="Desertlər"
+                data-ru="Десерты"
+                data-en="Desserts"
+              >
+                Desertlər
+              </h3>
+              <p
+                class="cat-panel-desc"
+                data-az="Fərdi porsiyalarda dadlı desertlər — ziyafət və büfetlər üçün."
+                data-ru="Вкусные десерты в индивидуальных порциях — для банкетов и фуршетов."
+                data-en="Delightful desserts in individual portions — for banquets and dessert bars."
+              >
+                Fərdi porsiyalarda dadlı desertlər — ziyafət və büfetlər üçün.
+              </p>
+              <div class="cat-items-grid">
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Cheesecake"
+                      data-ru="Чизкейк"
+                      data-en="Cheesecake"
+                    >
+                      Cheesecake
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Klassik, meyvəli, şokoladlı"
+                      data-ru="Классический, фруктовый, шоколадный"
+                      data-en="Classic, fruit, chocolate variations"
+                    >
+                      Klassik, meyvəli, şokoladlı
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Tiramisu"
+                      data-ru="Тирамису"
+                      data-en="Tiramisu"
+                    >
+                      Tiramisu
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="İtalyan klassiği, əl hazırı"
+                      data-ru="Итальянская классика, ручной работы"
+                      data-en="Italian classic, homemade"
+                    >
+                      İtalyan klassiği, əl hazırı
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Panna Cotta"
+                      data-ru="Панна котта"
+                      data-en="Panna Cotta"
+                    >
+                      Panna Cotta
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Meyvə sousu ilə zərif desert"
+                      data-ru="Нежный десерт с фруктовым соусом"
+                      data-en="Delicate dessert with fruit sauce"
+                    >
+                      Meyvə sousu ilə zərif desert
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Desert stəkanlı"
+                      data-ru="Десерт в стакане"
+                      data-en="Cup Dessert"
+                    >
+                      Desert stəkanlı
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Çiyələkli, hər münasibət üçün"
+                      data-ru="С клубникой, для любого повода"
+                      data-en="Strawberry, for any occasion"
+                    >
+                      Çiyələkli, hər münasibət üçün
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Xəmirləşmələr -->
+            <div class="cat-panel" id="cat-pahlava">
+              <h3
+                class="cat-panel-title"
+                data-az="Xəmirləşmələr"
+                data-ru="Выпечка"
+                data-en="Pastry"
+              >
+                Xəmirləşmələr
+              </h3>
+              <p
+                class="cat-panel-desc"
+                data-az="Ənənəvi Azərbaycan şirniyyatları və müasir çörəkçilik — yüksək keyfiyyətli xammaldan."
+                data-ru="Традиционные азербайджанские сладости и современная выпечка — из высококачественного сырья."
+                data-en="Traditional Azerbaijani sweets and modern pastry — from high-quality ingredients."
+              >
+                Ənənəvi Azərbaycan şirniyyatları və müasir çörəkçilik — yüksək
+                keyfiyyətli xammaldan.
+              </p>
+              <div class="cat-items-grid">
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Pahlava"
+                      data-ru="Пахлава"
+                      data-en="Baklava"
+                    >
+                      Pahlava
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Klassik və müasir variantlar, qutularda"
+                      data-ru="Классический и современный вариант, в коробках"
+                      data-en="Classic and modern versions, in gift boxes"
+                    >
+                      Klassik və müasir variantlar, qutularda
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Qoğal / Şorqoğal"
+                      data-ru="Гогал"
+                      data-en="Gogal"
+                    >
+                      Qoğal / Şorqoğal
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Ənənəvi Azərbaycan xəmiri"
+                      data-ru="Традиционная азербайджанская выпечка"
+                      data-en="Traditional Azerbaijani pastry"
+                    >
+                      Ənənəvi Azərbaycan xəmiri
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Badambura"
+                      data-ru="Бадамбура"
+                      data-en="Badambura"
+                    >
+                      Badambura
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Badam dolması ilə xəmir"
+                      data-ru="Тесто с начинкой из миндаля"
+                      data-en="Pastry filled with almonds"
+                    >
+                      Badam dolması ilə xəmir
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+                <div class="cat-item">
+                  <div>
+                    <div
+                      class="cat-item-name"
+                      data-az="Müasir pastalar"
+                      data-ru="Современная выпечка"
+                      data-en="Modern Pastry"
+                    >
+                      Müasir pastalar
+                    </div>
+                    <div
+                      class="cat-item-desc"
+                      data-az="Çörəklər, rulonlar, börek"
+                      data-ru="Хлеб, рулеты, бёрек"
+                      data-en="Breads, rolls, börek"
+                    >
+                      Çörəklər, rulonlar, börek
+                    </div>
+                  </div>
+                  <div class="cat-item-dot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /cat-content -->
+        </div>
+        <!-- /categories-layout -->
+      </div>
+      <!-- /container -->
+    </section>
+
+    <!-- ============================================================
+       SECTION 4 — GALLERY (Honeycomb)
+       ============================================================ -->
+    <section id="gallery">
+      <div class="container">
+        <div class="gallery-header reveal">
+          <span
+            class="section-label"
+            data-az="Qalereya"
+            data-ru="Галерея"
+            data-en="Gallery"
+            >Qalereya</span
+          >
+          <h2
+            class="section-title"
+            data-az="Əməyimizin məhsulu"
+            data-ru="Плоды нашего труда"
+            data-en="Our Creations"
+          >
+            Əməyimizin məhsulu
+          </h2>
+        </div>
+
+        <!-- Honeycomb gallery grid -->
+        <div class="hex-grid" id="hex-grid">
+          <!-- Row 1 — 3 hexagons -->
+          <div class="hex-row">
+            <div class="hex-item" data-img="cake-1.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-1.png" alt="Tort 1" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-2.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-2.png" alt="Tort 2" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-3.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-3.png" alt="Tort 3" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-4.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-4.png" alt="Tort 4" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-5.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-5.png" alt="Tort 5" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 — 4 hexagons (offset) -->
+          <div class="hex-row">
+            <div class="hex-item" data-img="cake-6.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-6.png" alt="Tort 6" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-7.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-7.png" alt="Tort 7" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-8.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-8.png" alt="Tort 8" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-angel.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-angel.png" alt="Tort angel" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-azza.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-azza.png" alt="Tort azza" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-baby.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-baby.png" alt="Tort baby" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 — 3 hexagons -->
+          <div class="hex-row">
+            <div class="hex-item" data-img="cake-basket.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-basket.png" alt="Tort basket" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-bear.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-bear.png" alt="Ayi tortu" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-bee.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-bee.png" alt="ari tortu" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-blincik.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-blincik.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-bride.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-bride.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4 — 4 hexagons (offset) -->
+          <div class="hex-row">
+            <div class="hex-item" data-img="cake-simple.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-simple.png" alt="sade tortu" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-elephant.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-elephant.png" alt="fil tortu" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="green.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-green.png" alt="green" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-rabbit.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-rabbit.png" alt="rabbit" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-strawbe.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-strawbe.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-table.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-table.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 5 — 5 hexagons -->
+          <div class="hex-row">
+            <div class="hex-item" data-img="cake-tooth.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-tooth.png" alt="dis tortu" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="muffin.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="muffin.png" alt="muffin" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-jack.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-jack.png" alt="jack" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="cake-daisy.png">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="cake-daisy.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="hex-item" data-img="muffin-2">
+              <div class="hex-border"></div>
+              <div class="hex-inner">
+                <img src="muffin-2.png" loading="lazy" />
+              </div>
+              <div class="hex-zoom-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /hex-grid -->
+      </div>
+      <!-- /container -->
+    </section>
+
+    <!-- ============================================================
+       LIGHTBOX
+       ============================================================ -->
+    <div id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">✕</button>
+      <button class="lightbox-nav" id="lightbox-prev">‹</button>
+      <div class="lightbox-inner">
+        <img src="" alt="" id="lightbox-img" />
+      </div>
+      <button class="lightbox-nav" id="lightbox-next">›</button>
+    </div>
+
+    <!-- ============================================================
+       SECTION 5 — ORDER FORM
+       ============================================================ -->
+    <section id="order">
+      <div class="container">
+        <div class="order-grid">
+          <!-- Left: info + steps -->
+          <div class="order-info reveal-left">
+            <span
+              class="section-label"
+              data-az="Sifariş"
+              data-ru="Заказ"
+              data-en="Order"
+              >Sifariş</span
+            >
+            <h2
+              class="section-title"
+              data-az="Tortunuzu sifariş edin"
+              data-ru="Закажите ваш торт"
+              data-en="Order your cake"
+            >
+              Tortunuzu sifariş edin
+            </h2>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start">
+              <img
+                src="cook-proces.png"
+                alt="Hazırlıq prosesi"
+                class="order-info-img"
+                style="flex: 1"
+              />
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <div
+                  style="
+                    width: 160px;
+                    height: 205px;
+                    flex-shrink: 0;
+                    border-radius: 12px;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="decorative.png"
+                    loading="lazy"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </div>
+                <div
+                  style="
+                    width: 160px;
+                    height: 205px;
+                    flex-shrink: 0;
+                    border-radius: 12px;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="decorative-1.png"
+                    loading="lazy"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="order-steps">
+              <div class="order-step">
+                <span class="step-num">1</span>
+                <div class="step-text">
+                  <span
+                    class="step-title"
+                    data-az="Formanı doldurun"
+                    data-ru="Заполните форму"
+                    data-en="Fill the form"
+                    >Formanı doldurun</span
+                  >
+                  <span
+                    class="step-desc"
+                    data-az="Ad, tarix, növ və qeydlərinizi yazın"
+                    data-ru="Введите имя, дату, тип и примечания"
+                    data-en="Enter your name, date, type and notes"
+                    >Ad, tarix, növ və qeydlərinizi yazın</span
+                  >
+                </div>
+              </div>
+              <div class="order-step">
+                <span class="step-num">2</span>
+                <div class="step-text">
+                  <span
+                    class="step-title"
+                    data-az="WhatsApp mesajı"
+                    data-ru="Сообщение в WhatsApp"
+                    data-en="WhatsApp message"
+                    >WhatsApp mesajı</span
+                  >
+                  <span
+                    class="step-desc"
+                    data-az="Düyməyə basdıqda hazır mesaj açılır"
+                    data-ru="Нажав кнопку, откроется готовое сообщение"
+                    data-en="Press the button to open a ready message"
+                    >Düyməyə basdıqda hazır mesaj açılır</span
+                  >
+                </div>
+              </div>
+              <div class="order-step">
+                <span class="step-num">3</span>
+                <div class="step-text">
+                  <span
+                    class="step-title"
+                    data-az="Təsdiq alın"
+                    data-ru="Получите подтверждение"
+                    data-en="Get confirmation"
+                    >Təsdiq alın</span
+                  >
+                  <span
+                    class="step-desc"
+                    data-az="Səma sizinlə əlaqə saxlayacaq"
+                    data-ru="Сэма свяжется с вами"
+                    data-en="Səma will get back to you"
+                    >Səma sizinlə əlaqə saxlayacaq</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="order-form-wrap reveal-right">
+            <div style="margin-bottom: 32px">
+              <span
+                class="section-label"
+                data-az="Sifariş Forması"
+                data-ru="Форма заказа"
+                data-en="Order Form"
+                >Sifariş Forması</span
+              >
+              <h3
+                class="section-title"
+                style="font-size: 28px"
+                data-az="Məlumatlarınızı daxil edin"
+                data-ru="Введите ваши данные"
+                data-en="Enter your details"
+              >
+                Məlumatlarınızı daxil edin
+              </h3>
+            </div>
+
+            <div class="form-row">
+              <!-- Ad -->
+              <div class="form-group">
+                <label
+                  class="form-label"
+                  for="f-name"
+                  data-az="Ad"
+                  data-ru="Имя"
+                  data-en="First Name"
+                  >Ad</label
+                >
+                <input
+                  type="text"
+                  id="f-name"
+                  class="form-input"
+                  placeholder="Aysel"
+                  data-placeholder-az="Aysel"
+                  data-placeholder-ru="Айсель"
+                  data-placeholder-en="Aysel"
+                />
+              </div>
+              <!-- Soyad -->
+              <div class="form-group">
+                <label
+                  class="form-label"
+                  for="f-surname"
+                  data-az="Soyad"
+                  data-ru="Фамилия"
+                  data-en="Last Name"
+                  >Soyad</label
+                >
+                <input
+                  type="text"
+                  id="f-surname"
+                  class="form-input"
+                  placeholder="Məmmədova"
+                  data-placeholder-az="Məmmədova"
+                  data-placeholder-ru="Мамедова"
+                  data-placeholder-en="Mammadova"
+                />
+              </div>
+            </div>
+
+            <!-- Telefon -->
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="f-phone"
+                data-az="Telefon nömrəsi"
+                data-ru="Номер телефона"
+                data-en="Phone Number"
+                >Telefon nömrəsi</label
+              >
+              <input
+                type="tel"
+                id="f-phone"
+                class="form-input"
+                placeholder="+994 XX XXX XX XX"
+              />
+            </div>
+
+            <div class="form-row">
+              <!-- Tarix -->
+              <div class="form-group">
+                <label
+                  class="form-label"
+                  for="f-date"
+                  data-az="Tarix"
+                  data-ru="Дата"
+                  data-en="Date"
+                  >Tarix</label
+                >
+                <input type="date" id="f-date" class="form-input" />
+              </div>
+              <!-- Saat -->
+              <div class="form-group">
+                <label
+                  class="form-label"
+                  for="f-time"
+                  data-az="Saat"
+                  data-ru="Время"
+                  data-en="Time"
+                  >Saat</label
+                >
+                <input type="time" id="f-time" class="form-input" />
+              </div>
+            </div>
+
+            <!-- Sifariş növü -->
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="f-type"
+                data-az="Sifariş növü"
+                data-ru="Тип заказа"
+                data-en="Order Type"
+                >Sifariş növü</label
+              >
+              <select id="f-type" class="form-select">
+                <option
+                  value=""
+                  data-az="Seçin..."
+                  data-ru="Выберите..."
+                  data-en="Select..."
+                >
+                  Seçin...
+                </option>
+                <option
+                  value="toy"
+                  data-az="Toy tortu"
+                  data-ru="Свадебный торт"
+                  data-en="Wedding Cake"
+                >
+                  Toy tortu
+                </option>
+                <option
+                  value="nisan"
+                  data-az="Nişan tortu"
+                  data-ru="Торт на помолвку"
+                  data-en="Engagement Cake"
+                >
+                  Nişan tortu
+                </option>
+                <option
+                  value="adgun"
+                  data-az="Ad günü tortu"
+                  data-ru="Торт на день рождения"
+                  data-en="Birthday Cake"
+                >
+                  Ad günü tortu
+                </option>
+                <option
+                  value="sirniyyat"
+                  data-az="Şirniyyat büfeti"
+                  data-ru="Десертный стол"
+                  data-en="Dessert Bar"
+                >
+                  Şirniyyat büfeti
+                </option>
+                <option
+                  value="cupcake"
+                  data-az="Cupcake / Keks"
+                  data-ru="Капкейки"
+                  data-en="Cupcakes"
+                >
+                  Cupcake / Keks
+                </option>
+                <option
+                  value="diger"
+                  data-az="Digər"
+                  data-ru="Другое"
+                  data-en="Other"
+                >
+                  Digər
+                </option>
+              </select>
+            </div>
+
+            <!-- Qeyd -->
+            <div class="form-group">
+              <label
+                class="form-label"
+                for="f-note"
+                data-az="Əlavə qeyd"
+                data-ru="Дополнительная заметка"
+                data-en="Additional Note"
+                >Əlavə qeyd</label
+              >
+              <textarea
+                id="f-note"
+                class="form-textarea"
+                placeholder="Dizayn, ölçü, rəng, allergiya qeydləri..."
+                data-placeholder-az="Dizayn, ölçü, rəng, allergiya qeydləri..."
+                data-placeholder-ru="Дизайн, размер, цвет, аллергии..."
+                data-placeholder-en="Design, size, color, allergy notes..."
+              ></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="button" class="form-submit" id="form-submit">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M11.5 0C5.149 0 0 5.149 0 11.5S5.149 23 11.5 23 23 17.851 23 11.5 17.851 0 11.5 0zm0 21C6.253 21 2 16.747 2 11.5S6.253 2 11.5 2 21 6.253 21 11.5 16.747 21 11.5 21z"
+                />
+              </svg>
+              <span
+                data-az="WhatsApp ilə Sifariş Et"
+                data-ru="Заказать через WhatsApp"
+                data-en="Order via WhatsApp"
+                >WhatsApp ilə Sifariş Et</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 6 — DELIVERY
+       ============================================================ -->
+    <section id="delivery">
+      <div class="container">
+        <div class="delivery-header reveal">
+          <span
+            class="section-label"
+            data-az="Çatdırılma"
+            data-ru="Доставка"
+            data-en="Delivery"
+            >Çatdırılma</span
+          >
+          <h2
+            class="section-title"
+            data-az="Çatdırılma haqqında"
+            data-ru="О доставке"
+            data-en="Delivery Information"
+          >
+            Çatdırılma haqqında
+          </h2>
+          <p
+            class="section-subtitle"
+            style="margin: 0 auto"
+            data-az="Tortunuzu təzə və ehtiyatla çatdırırıq. Aşağıda ətraflı məlumat tapa bilərsiniz."
+            data-ru="Мы доставляем торт свежим и бережно. Подробную информацию можно найти ниже."
+            data-en="We deliver your cake fresh and carefully. Find detailed information below."
+          >
+            Tortunuzu təzə və ehtiyatla çatdırırıq. Aşağıda ətraflı məlumat tapa
+            bilərsiniz.
+          </p>
+        </div>
+
+        <div class="delivery-cards">
+          <div class="delivery-card reveal delay-1">
+            <span class="delivery-icon">🌍</span>
+            <h3
+              class="delivery-card-title"
+              data-az="Çatdırılma"
+              data-ru="Доставка"
+              data-en="Delivery"
+            >
+              Çatdırılma
+            </h3>
+            <p
+              class="delivery-card-text"
+              data-az="Bakı daxili və Azərbaycanın istənilən şəhərinə, həmçinin dünyaya çatdırılma mövcuddur. Ətraflı məlumat üçün bizimlə əlaqə saxlayın."
+              data-ru="Доставка по Баку, по всему Азербайджану и по всему миру. Для получения подробной информации свяжитесь с нами."
+              data-en="Delivery within Baku, across Azerbaijan and worldwide. Contact us for more details."
+            >
+              Bakı daxili və Azərbaycanın istənilən şəhərinə, həmçinin dünyaya
+              çatdırılma mövcuddur. Ətraflı məlumat üçün bizimlə əlaqə saxlayın.
+            </p>
+          </div>
+
+          <div class="delivery-card reveal delay-2">
+            <span class="delivery-icon">📦</span>
+            <h3
+              class="delivery-card-title"
+              data-az="Qablaşdırma"
+              data-ru="Упаковка"
+              data-en="Packaging"
+            >
+              Qablaşdırma
+            </h3>
+            <p
+              class="delivery-card-text"
+              data-az="Hər məhsul xüsusi qoruyucu qablaşdırmada çatdırılır. Tortlar xüsusi qutu ilə, şirniyyatlar isə zərif hədiyyə qutularında təqdim edilir."
+              data-ru="Каждый продукт доставляется в специальной защитной упаковке. Торты — в особых коробках, сладости — в элегантных подарочных коробках."
+              data-en="Every product is delivered in special protective packaging. Cakes in special boxes, sweets in elegant gift boxes."
+            >
+              Hər məhsul xüsusi qoruyucu qablaşdırmada çatdırılır. Tortlar
+              xüsusi qutu ilə, şirniyyatlar isə zərif hədiyyə qutularında təqdim
+              edilir.
+            </p>
+            <div style="display: flex; gap: 8px; margin-top: 16px">
+              <img
+                src="delivery-1.jpg"
+                style="
+                  width: 50%;
+                  height: 120px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+              <img
+                src="delivery-2.jpg"
+                style="
+                  width: 50%;
+                  height: 120px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+            </div>
+          </div>
+
+          <div class="delivery-card reveal delay-3">
+            <span class="delivery-icon">⏰</span>
+            <h3
+              class="delivery-card-title"
+              data-az="Sifariş müddəti"
+              data-ru="Срок заказа"
+              data-en="Order Lead Time"
+            >
+              Sifariş müddəti
+            </h3>
+            <p
+              class="delivery-card-text"
+              data-az="Tortlar üçün minimum 3 gün, böyük sifarişlər üçün isə 5-7 gün əvvəlcədən sifariş tələb olunur. Toy tortları üçün 2+ həftə tövsiyə edilir."
+              data-ru="Для тортов требуется минимум 3 дня, для крупных заказов — 5–7 дней. Для свадебных тортов рекомендуется 2+ недели."
+              data-en="Minimum 3 days for cakes, 5–7 days for large orders. For wedding cakes 2+ weeks is recommended."
+            >
+              Tortlar üçün minimum 3 gün, böyük sifarişlər üçün isə 5-7 gün
+              əvvəlcədən sifariş tələb olunur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 7 — CONTACT
+       ============================================================ -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <!-- Image -->
+          <div class="reveal-left">
+            <img src="sama-cake.png" alt="Səma" class="contact-image" />
+          </div>
+
+          <!-- Content -->
+          <div class="contact-content reveal-right">
+            <div>
+              <span
+                class="section-label"
+                data-az="Əlaqə"
+                data-ru="Контакты"
+                data-en="Contact"
+                >Əlaqə</span
+              >
+              <h2
+                class="section-title"
+                data-az="Bizimlə əlaqə saxlayın"
+                data-ru="Свяжитесь с нами"
+                data-en="Get in touch"
+              >
+                Bizimlə əlaqə saxlayın
+              </h2>
+              <p
+                class="section-subtitle"
+                data-az="Sual, sifariş və ya əməkdaşlıq üçün Instagram və ya WhatsApp üzərindən bizimlə əlaqə saxlaya bilərsiniz."
+                data-ru="По вопросам, заказу или сотрудничеству свяжитесь с нами через Instagram или WhatsApp."
+                data-en="For questions, orders or collaboration, reach us via Instagram or WhatsApp."
+              >
+                Sual, sifariş və ya əməkdaşlıq üçün Instagram və ya WhatsApp
+                üzərindən bizimlə əlaqə saxlaya bilərsiniz.
+              </p>
+            </div>
+
+            <div class="contact-links">
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/sky_.cake"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link-item"
+              >
+                <span class="contact-link-icon instagram">📷</span>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">Instagram</span>
+                  <span class="contact-link-value">@sky_.cake</span>
+                </div>
+              </a>
+
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/994706403464"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link-item"
+              >
+                <span class="contact-link-icon whatsapp">💬</span>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">WhatsApp</span>
+                  <span class="contact-link-value">+994 70 640 34 64</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer>
+      <img src="sama-main.png" alt="Sky Cake" class="footer-logo" />
+      <div class="footer-divider"></div>
+      <p class="footer-text">© 2025 Sky Cake — Handcrafted by Səma</p>
+      <p
+        class="footer-text"
+        style="margin-top: 6px; font-size: 10px; opacity: 0.35"
+      >
+        Developed by Elvin Eyvazov
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
