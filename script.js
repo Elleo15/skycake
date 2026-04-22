@@ -80,17 +80,22 @@
     return;
   }
 
-  // First visit — show intro with magic sparkles
-  generateSparkles();
+ // First visit — show intro with magic sparkles
+generateSparkles();
+
+// Play sound on first user interaction
+document.addEventListener('click', function playOnce() {
   playMagicSound();
+  document.removeEventListener('click', playOnce);
+}, { once: true });
 
-  // Mark as visited
-  localStorage.setItem("skycake_visited", "true");
+// Mark as visited
+localStorage.setItem("skycake_visited", "true");
 
-  // Auto-hide after 2.8 seconds
-  setTimeout(() => {
-    intro.classList.add("hidden");
-  }, 2800);
+// Auto-hide after 2.8 seconds
+setTimeout(() => {
+  intro.classList.add("hidden");
+}, 2800);
 
   // Generate sparkle particles
   function generateSparkles() {
