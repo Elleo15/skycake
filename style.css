@@ -1854,13 +1854,19 @@ footer {
 
   /* Gallery hex */
   .hex-item {
-    width: 110px;
-    height: 127px;
+    width: 90px;
+    height: 104px;
   }
 
   .hex-row:nth-child(even) {
-    margin-left: 58px;
+    margin-left: 47px;
   }
+
+   .hex-grid {
+  max-width: 100%;
+  padding: 0 8px;
+  overflow: hidden;
+}
 
   /* Form */
   .order-form-wrap {
